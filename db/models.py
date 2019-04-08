@@ -4,6 +4,15 @@ from app import db
 
 
 class Car(db.Model):
+    def __init__(self, id, category_id, brand, model, mileage, color, production_year):
+        self.id = id
+        self.category_id = category_id
+        self.brand = brand
+        self.model = model
+        self.mileage = mileage
+        self.color = color
+        self.production_year = production_year
+
     __tablename__ = 'car'
     id = Column(Integer, primary_key=True)
     category_id = Column(Integer)
@@ -15,12 +24,20 @@ class Car(db.Model):
 
 
 class Category(db.Model):
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
+
     __tablename__ = 'category'
     id = Column(Integer, primary_key=True)
     name = Column(String)
 
 
 class Customer(db.Model):
+    def __init__(self, customer_id, first_name):
+        self.customer_id = customer_id
+        self.first_name = first_name
+
     __tablename__ = 'customer'
     customer_id = Column(Integer, primary_key=True)
     first_name = Column(String)
@@ -48,6 +65,10 @@ class Address(db.Model):
 
 
 class Location(db.Model):
+    def __init__(self, id, name, address):
+        self.id = id
+        self.name = name
+        self.address = address
     __tablename__ = 'location'
     id = Column(Integer, primary_key=True)
     name = Column(String)
@@ -55,6 +76,12 @@ class Location(db.Model):
 
 
 class Insurance(db.Model):
+    def __init__(self, name, description, policy):
+        self.id = id
+        self.name = name
+        self.description = description
+        self.policy = policy
+
     __tablename__ = 'insurance'
     id = Column(Integer, primary_key=True)
     name = Column(String)
@@ -63,6 +90,11 @@ class Insurance(db.Model):
 
 
 class RentalInsurance(db.Model):
+    def __init__(self, rental_id, insurance_id):
+        self.id = id
+        self.rental_id = rental_id
+        self.insurance_id = insurance_id
+
     __tablename__ = 'rental_insurance'
     id = Column(Integer, primary_key=True)
     rental_id = Column(Integer)
@@ -70,6 +102,16 @@ class RentalInsurance(db.Model):
 
 
 class Rental(db.Model):
+    def __init__(self, customer_id, car_id, pickup_location, dropoff_location, start_date, end_date, remarks):
+        self.id = id
+        self.customer_id = customer_id
+        self.car_id = car_id
+        self.pickup_location = pickup_location
+        self.dropoff_location = dropoff_location
+        self.start_date = start_date
+        self.end_date = end_date
+        self.remarks = remarks
+
     __tablename__ = 'rental'
     id = Column(Integer, primary_key=True)
     customer_id = Column(Integer)
