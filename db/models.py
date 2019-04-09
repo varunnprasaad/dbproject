@@ -18,14 +18,6 @@ class Base(db.Model):
 
 
 class Car(Base):
-    # def __init__(self, id, category_id, brand, model, mileage, color, production_year):
-    #     self.id = id
-    #     self.category_id = category_id
-    #     self.brand = brand
-    #     self.model = model
-    #     self.mileage = mileage
-    #     self.color = color
-    #     self.production_year = production_year
 
     __tablename__ = 'car'
     id = Column(Integer, primary_key=True)
@@ -45,9 +37,6 @@ class Category(Base):
 
 
 class Customer(Base):
-    # def __init__(self, customer_id, first_name):
-    #     self.customer_id = customer_id
-    #     self.first_name = first_name
 
     __tablename__ = 'customer'
     customer_id = Column(Integer, primary_key=True)
@@ -58,13 +47,6 @@ class Customer(Base):
 
 
 class Address(Base):
-    # def __init__(self, id, street, city, state, zipcode, country):
-    #     self.id = id
-    #     self.street = street
-    #     self.city = city
-    #     self.state = state
-    #     self.zipcode = zipcode
-    #     self.country = country
 
     __tablename__ = 'address'
     id = Column(Integer, primary_key=True)
@@ -76,10 +58,7 @@ class Address(Base):
 
 
 class Location(Base):
-    # def __init__(self, id, name, address):
-    #     self.id = id
-    #     self.name = name
-    #     self.address = address
+
     __tablename__ = 'location'
     id = Column(Integer, primary_key=True)
     name = Column(String)
@@ -87,11 +66,6 @@ class Location(Base):
 
 
 class Insurance(Base):
-    # def __init__(self, name, description, policy):
-    #     self.id = id
-    #     self.name = name
-    #     self.description = description
-    #     self.policy = policy
 
     __tablename__ = 'insurance'
     id = Column(Integer, primary_key=True)
@@ -101,10 +75,6 @@ class Insurance(Base):
 
 
 class RentalInsurance(Base):
-    # def __init__(self, rental_id, insurance_id):
-    #     self.id = id
-    #     self.rental_id = rental_id
-    #     self.insurance_id = insurance_id
 
     __tablename__ = 'rental_insurance'
     id = Column(Integer, primary_key=True)
@@ -113,16 +83,6 @@ class RentalInsurance(Base):
 
 
 class Rental(Base):
-    # def __init__(self, customer_id, car_id, pickup_location, dropoff_location, start_date, end_date, remarks):
-    #     self.id = id
-    #     self.customer_id = customer_id
-    #     self.car_id = car_id
-    #     self.pickup_location = pickup_location
-    #     self.dropoff_location = dropoff_location
-    #     self.start_date = start_date
-    #     self.end_date = end_date
-    #     self.remarks = remarks
-
     __tablename__ = 'rental'
     id = Column(Integer, primary_key=True)
     customer_id = Column(Integer)
